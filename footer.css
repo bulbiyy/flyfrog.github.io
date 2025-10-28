@@ -72,13 +72,19 @@ footer {
   align-items: flex-end;
 }
 
-.contact-info {
-  font-size: 18px;
-  letter-spacing: 1px;
-  margin: 0; 
-  text-align: right;
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+  margin-top: 5px;       
 }
 
+.footer-contact p {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 2px 0;         
+  text-align: right;     
+}
 
 /* ------------------------ */
 /*         FOR PHONES       */

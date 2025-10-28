@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Montserrat:wght@400&display=swap');
+
+footer {
+  background-color: #C1E0FF;
+  color: #252774;
+  height: 240px;
+  border-top: 2px solid #252774;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.footer-title {
+  font-family: "Coiny", system-ui;
+  font-size: 50px;
+  margin: 0 0 10px 0;
+}
+
+/* Left section */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.footer-links a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #252774;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #0C93ff;
+  transform: scale(1.05);
+}
+
+/* Center logo */
+.footer-logo {
+  height: 178px;
+  width: auto;
+  align-self: center;
+}
+
+/* Right section */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.contact-info {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 0; 
+  text-align: right;
+}
+
+
+/* ------------------------ */
+/*         FOR PHONES       */
+/* ------------------------ */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    align-items: center;    
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin: 15px 0; 
+  }
+}

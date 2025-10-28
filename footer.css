@@ -6,10 +6,11 @@ footer {
   height: 240px;
   border-top: 2px solid #252774;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
-  position: relative;
+  padding-top: 20px;
+  width: 100%;
 }
 
 .footer-container {

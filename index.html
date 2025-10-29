@@ -5,14 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My GitHub Pages Site</title>
   <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="header.css">
 </head>
 <body>
+  <header id="header-placeholder"></header>
+
   <h1>Hello world!</h1>
   <p>Welcome to my GitHub Pages site!</p>
 
   <footer id="footer-placeholder"></footer>
 
   <script>
+    // Load header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading header:', error));
+
+    // Load footer
     fetch('footer.html')
       .then(response => response.text())
       .then(data => {

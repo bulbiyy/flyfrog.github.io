@@ -69,16 +69,17 @@ header {
   font-weight: 500;
   text-decoration: none;
   color: #252774;
-  padding: 0;          /* no button background */
+  padding: 0;          
   background: none;
   border-radius: 0;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
 .middle-menu a:hover,
 .dropdown-word:hover {
-  color: #0C93ff;      /* just text highlight */
-  transform: none;     /* no scale effect */
+  color: #0C93ff;      
+  transform: scale(1.05);     
 }
 
 /* Dropdown container */

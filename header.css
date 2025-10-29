@@ -82,6 +82,16 @@ header {
   transform: scale(1.05);     
 }
 
+#magic-line {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background-color: #0C93ff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
 /* Dropdown container */
 .dropdown {
   position: relative;

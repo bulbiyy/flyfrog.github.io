@@ -14,7 +14,7 @@ header {
   padding: 0 40px;
 }
 
-/* Container for layout */
+/* Container */
 .header-container {
   width: 90%;
   max-width: 1400px;
@@ -54,15 +54,34 @@ header {
   line-height: 1;
 }
 
-/* Middle Menu */
+/* ---------------- Middle Menu ---------------- */
 .middle-menu {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
   position: relative; /* for magic line */
 }
 
-/* Dropdown */
+/* Middle menu words styled like dropdown items */
+.middle-menu a,
+.dropdown-word {
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #252774;
+  padding: 0;          /* no button background */
+  background: none;
+  border-radius: 0;
+  transition: color 0.3s ease;
+}
+
+.middle-menu a:hover,
+.dropdown-word:hover {
+  color: #0C93ff;      /* just text highlight */
+  transform: none;     /* no scale effect */
+}
+
+/* Dropdown container */
 .dropdown {
   position: relative;
   display: flex;
@@ -109,6 +128,7 @@ header {
   text-decoration: none;
   font-weight: 500;
   font-size: 1.05rem;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .dropdown-list li a:hover {
@@ -116,15 +136,14 @@ header {
   transform: scale(1.05);
 }
 
-/* show dropdown on hover */
 .dropdown:hover .dropdown-list {
   display: block;
 }
 
-/* Right Word */
+/* Right Word stays button style */
 .right-word-container a {
   padding: 10px 20px;
-  border-radius: 999px; /* oval shape */
+  border-radius: 999px;
   background-color: rgba(255,255,255,0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -133,16 +152,10 @@ header {
   text-decoration: none;
   color: #252774;
   display: inline-block;
-}
-
-/* ---------------- Header Links Behavior (like footer) ---------------- */
-.site-link {
   transition: color 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
 }
 
-.site-link:hover,
-.site-link:focus {
+.right-word-container a:hover {
   color: #0C93ff;
   transform: scale(1.05);
 }

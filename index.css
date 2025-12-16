@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&family=Montserrat:wght@400&display=swap');
-
 :root{
   --bg:#0b0f14;
   --text:#e9eef7;
@@ -10,20 +9,18 @@
 }
 
 /* Reset */
-*{ box-sizing:border-box }
+*{ box-sizing:border-box; }
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  background:
-    radial-gradient(1200px 800px at 20% 0%, #13223a 0%, var(--bg) 55%);
-  color:var(--text);
-  overflow-x:hidden;
+  background: radial-gradient(1200px 800px at 20% 0%, #13223a 0%, var(--bg) 55%);
+  color: var(--text);
+  overflow-x: hidden;
 }
 
 /* =========================
-   HERO STAGE
+   HERO STAGE (map behind, text over it)
    ========================= */
-
 .heroStage{
   position: relative;
   max-width: 1200px;
@@ -33,9 +30,8 @@ body{
 }
 
 /* =========================
-   MAP LAYER (BACKGROUND)
+   MAP LAYER (starts ~1/4 from left)
    ========================= */
-
 .mapLayer{
   position: relative;
   margin-left: 25%;
@@ -44,199 +40,216 @@ body{
 
   border-radius: var(--radius);
   background: rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.10);
   box-shadow: var(--shadow);
   overflow: hidden;
 }
 
-/* Tall SVG so it goes below viewport */
+/* SVG sizing: shows the whole map (no cropping if preserveAspectRatio="... meet") */
 svg#map{
-  width:100%;
-  height:auto;
-  display:block;
-  min-height: 125vh;
+  width: 100%;
+  height: auto;
+  display: block;
+
+  /* still lets it go lower than viewport */
+  min-height: 110vh;
 }
 
 /* =========================
-   MAP REGIONS
+   SHOW ENTIRE MAP (default style)
+   - this makes ALL shapes visible, not just .region
    ========================= */
+#map path,
+#map polygon,
+#map polyline,
+#map rect,
+#map circle,
+#map ellipse{
+  fill: rgba(255,255,255,.06);
+  stroke: rgba(255,255,255,.12);
+  stroke-width: 1;
+}
 
-.region{
+/* If your SVG has groups, keep them visible too */
+#map g{
+  opacity: 1;
+}
+
+/* Non-clickable elements can use this class */
+#map .not-clickable{
+  pointer-events: none;
+}
+
+/* =========================
+   CLICKABLE REGIONS
+   ========================= */
+#map .region{
   fill: rgba(98,182,255,.45);
   stroke: var(--stroke);
   stroke-width: 1.2;
-  cursor:pointer;
+  cursor: pointer;
 
-  transform-origin: center;
   transition:
     fill .15s ease,
     transform .15s ease,
     filter .15s ease;
+
+  /* makes SVG scaling behave nicely */
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-.region:hover{
+#map .region:hover{
   fill: rgba(98,182,255,.85);
   transform: scale(1.035);
   filter: drop-shadow(0 12px 18px rgba(98,182,255,.22));
 }
 
-.region.is-active{
+#map .region.is-active{
   fill: rgba(255,184,107,.9);
   transform: scale(1.04);
 }
 
-/* Non-clickable areas */
-.blank{
+/* If you still have a .blank rect, keep it visible but not clickable */
+#map .blank{
   fill: rgba(255,255,255,.04);
   stroke: rgba(255,255,255,.06);
-  pointer-events:none;
+  pointer-events: none;
 }
 
 /* =========================
    TOOLTIP
    ========================= */
-
 .tip{
-  position:absolute;
-  z-index:6;
-  pointer-events:none;
+  position: absolute;
+  z-index: 6;
+  pointer-events: none;
 
-  padding:8px 10px;
-  border-radius:12px;
+  padding: 8px 10px;
+  border-radius: 12px;
   background: rgba(18,25,38,.92);
-  border:1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.12);
   color: var(--text);
-  font-size:13px;
+  font-size: 13px;
 
   transform: translate(-50%, -120%);
-  white-space:nowrap;
+  white-space: nowrap;
 
-  opacity:0;
+  opacity: 0;
   transition: opacity .08s ease;
 }
-
-.tip.on{ opacity:1; }
+.tip.on{ opacity: 1; }
 
 /* =========================
-   TEXT OVERLAY (FRONT)
+   TEXT OVERLAY (logo + line + button)
    ========================= */
-
 .leftOverlay{
-  position:absolute;
-  top:56px;
-  left:18px;
-  z-index:8;
+  position: absolute;
+  top: 56px;
+  left: 18px;
+  z-index: 8;
 
   width: min(420px, 85%);
-  padding:16px;
+  padding: 16px;
 
-  /* remove these three lines if you want pure text */
+  /* delete these 3 lines if you want fully transparent text overlay */
   background: rgba(11,15,20,.35);
-  border:1px solid rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.10);
   backdrop-filter: blur(10px);
 
   border-radius: var(--radius);
 }
 
 .logo{
-  font-size:100px;
-  font-weight:900;
-  letter-spacing:.3px;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: .3px;
 }
 
 .tagline{
-  margin:8px 0 14px;
-  color:var(--muted);
-  line-height:1.5;
+  margin: 8px 0 14px;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .btn{
-  border:1px solid rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.06);
-  color:var(--text);
-  padding:10px 16px;
-  border-radius:999px;
-  cursor:pointer;
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
 
-  transition:
-    transform .15s ease,
-    background .15s ease;
+  transition: transform .15s ease, background .15s ease;
 }
-
 .btn:hover{
   transform: translateY(-1px);
   background: rgba(255,255,255,.10);
 }
 
 /* =========================
-   SCROLL CARDS
+   SCROLL CARDS SECTION
    ========================= */
-
 .section{
-  max-width:1200px;
+  max-width: 1200px;
   margin: 32px auto 80px;
   padding: 0 18px;
 }
 
 .cards{
-  display:grid;
-  gap:16px;
+  display: grid;
+  gap: 16px;
 }
 
 .card{
-  display:grid;
+  display: grid;
   grid-template-columns: 260px 1fr auto;
-  align-items:center;
-  gap:16px;
+  align-items: center;
+  gap: 16px;
 
-  min-height:160px;
+  min-height: 160px;
   border-radius: var(--radius);
-  border:1px solid rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.03);
   box-shadow: var(--shadow);
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .photo{
-  height:100%;
-  min-height:160px;
-  background:
-    linear-gradient(135deg,
-      rgba(98,182,255,.25),
-      rgba(255,184,107,.18));
+  height: 100%;
+  min-height: 160px;
+  background: linear-gradient(135deg, rgba(98,182,255,.25), rgba(255,184,107,.18));
 }
 
 .cardBody{
-  padding:14px 0;
+  padding: 14px 0;
 }
 
 .cardBody h3{
-  margin:0 0 6px;
-  font-size:18px;
+  margin: 0 0 6px;
+  font-size: 18px;
 }
 
 .cardBody p{
-  margin:0;
-  color:var(--muted);
-  line-height:1.5;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .go{
-  margin-right:14px;
-  width:44px;
-  height:44px;
-  border-radius:14px;
+  margin-right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
 
-  border:1px solid rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.06);
-  cursor:pointer;
+  cursor: pointer;
 
-  display:grid;
-  place-items:center;
+  display: grid;
+  place-items: center;
 
-  transition:
-    transform .15s ease,
-    background .15s ease;
+  transition: transform .15s ease, background .15s ease;
 }
 
 .go:hover{
@@ -245,18 +258,17 @@ svg#map{
 }
 
 .arrow{
-  width:18px;
-  height:18px;
-  border-right:2px solid rgba(233,238,247,.9);
-  border-top:2px solid rgba(233,238,247,.9);
+  width: 18px;
+  height: 18px;
+  border-right: 2px solid rgba(233,238,247,.9);
+  border-top: 2px solid rgba(233,238,247,.9);
   transform: rotate(45deg);
-  margin-left:-4px;
+  margin-left: -4px;
 }
 
 /* =========================
    RESPONSIVE
    ========================= */
-
 @media (max-width: 980px){
   .mapLayer{
     margin-left: 0;
@@ -282,7 +294,7 @@ svg#map{
   }
 
   .go{
-    justify-self:end;
-    margin:0 14px 14px;
+    justify-self: end;
+    margin: 0 14px 14px;
   }
 }

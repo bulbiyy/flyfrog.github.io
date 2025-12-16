@@ -3,14 +3,14 @@
 
 /* Header base */
 header {
-  position: static;
+  background-color: #C1E0FF;
+  color: #252774;
+  border-bottom: 2px solid #252774;
+  height: 100px;
   display: flex;
   align-items: center;          
   justify-content: center;
   width: 100%;
-  height: 100px;
-  background-color: #C1E0FF;
-  border-bottom: 2px solid #252774;
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   padding: 0 60px;

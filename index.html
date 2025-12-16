@@ -9,33 +9,76 @@
 </head>
 <body>
   <header id="header-placeholder"></header>
-
-  <h1>Hello world!</h1>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
-  <p>Welcome to my GitHub Pages site!</p>
   
-
+  <main class="heroStage">
+    <!-- Map layer (behind) -->
+    <div class="mapLayer">
+      <div id="tip" class="tip"></div>
+  
+      <!-- Replace this SVG with your real one -->
+      <svg id="map" viewBox="0 0 600 800" aria-label="Map">
+        <rect class="blank" x="0" y="0" width="600" height="800"></rect>
+  
+        <path class="region" data-id="area-1" data-name="Area One"
+              d="M80 120 L260 120 L260 260 L80 260 Z"></path>
+        <path class="region" data-id="area-2" data-name="Area Two"
+              d="M320 170 L520 140 L540 300 L330 320 Z"></path>
+        <path class="region" data-id="area-3" data-name="Area Three"
+              d="M120 360 L260 340 L300 520 L140 560 Z"></path>
+      </svg>
+    </div>
+  
+    <!-- Text overlay (front) -->
+    <section class="leftOverlay">
+      <div class="logo">FlyFrog</div>
+      <div class="tagline">Enjoy Russia with us!</div>
+      <button class="btn">Create Your Own Tour</button>
+    </section>
+  </main>
+  
+  <!-- Scroll section for your big list cards later -->
+  <section class="section">
+    <div class="cards">
+      <article class="card">
+        <div class="photo"></div>
+        <div class="cardBody">
+          <h3>Moscow</h3>
+          <p>Description goes here.</p>
+        </div>
+        <button class="go" data-id="area-1" aria-label="Open Area One"><span class="arrow"></span></button>
+      </article>
+  
+      <article class="card">
+        <div class="photo"></div>
+        <div class="cardBody">
+          <h3>St. Petersburg</h3>
+          <p>Description goes here.</p>
+        </div>
+        <button class="go" data-id="area-2" aria-label="Open Area Two"><span class="arrow"></span></button>
+      </article>
+  
+      <article class="card">
+        <div class="photo"></div>
+        <div class="cardBody">
+          <h3>Kazan</h3>
+          <p>Description goes here.</p>
+        </div>
+        <button class="go" data-id="area-3" aria-label="Open Area Three"><span class="arrow"></span></button>
+      </article>
+  
+      <article class="card">
+        <div class="photo"></div>
+        <div class="cardBody">
+          <h3>Nizhny Novgorod</h3>
+          <p>Description goes here.</p>
+        </div>
+        <button class="go" data-id="area-4" aria-label="Open Area Four"><span class="arrow"></span></button>
+      </article>
+    </div>
+  </section>
+  
+  <script src="main.js"></script>
+  
   <footer id="footer-placeholder"></footer>
 
   <script>

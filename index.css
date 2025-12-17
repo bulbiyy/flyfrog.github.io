@@ -40,7 +40,7 @@ button:focus-visible{ outline:none; }
 .mapLayer{
   position: relative;
 
-  margin-left: 28%;     
+  margin-left: 5%;     
   height: 88vh;         
   padding: 0;
 
@@ -121,12 +121,10 @@ button:focus-visible{ outline:none; }
 
   width: min(560px, 90%);
   background: transparent;
-
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 16px !important;
-
-  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
 }
 
 .leftOverlay .logo,

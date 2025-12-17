@@ -38,8 +38,6 @@ button:focus-visible{ outline:none; }
 
 
 .mapLayer{
-  position: relative;
-
   margin-left: 0;     
   height: 80vh;         
   padding: 0;
@@ -215,32 +213,4 @@ button:focus-visible{ outline:none; }
 }
 
 
-.go{
-  margin-right: 14px;
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-
-  background: var(--dark);
-  cursor: pointer;
-
-  display: grid;
-  place-items: center;
-
-  transition: transform .15s ease, background .15s ease;
-}
-
-.go:hover{
-  transform: translateY(-1px);
-  background: var(--accent);
-}
-
-.arrow{
-  width: 18px;
-  height: 18px;
-  border-right: 2px solid var(--bg);
-  border-top: 2px solid var(--bg);
-  transform: rotate(45deg);
-  margin-left: -4px;
-}
 

@@ -51,9 +51,9 @@ button:focus-visible{ outline:none; }
 }
 
 .mapLayer svg{
-  width:  min(900px, 100%)%;
+  width: min(900px, 100%);  
   height: auto;
-  aspect-ratio: 600 / 800;
+  aspect-ratio: 600 / 800;  
   display: block;
 }
 

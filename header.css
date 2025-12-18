@@ -10,18 +10,27 @@ header {
   display: flex;
   align-items: center;          
   justify-content: center;
+  position: relative;
   width: 100%;
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
-  padding: 0 60px;
-  z-index: 999;
+  padding: 0;
+  margin: 0;
+  z-index: 9999;
+}
+
+header > *{
+  width: 100%;
 }
 
 /* Container */
 .header-container {
-  position: relative;
-  width: 95%;
-  max-width: 1600px;
+  height: 100%;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center; 
@@ -60,6 +69,7 @@ header {
 
 /* ---------------- Middle Menu ---------------- */
 .middle-menu {
+  height: 100%;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -98,9 +108,11 @@ header {
 
 /* Dropdown container */
 .dropdown {
+  height: 100%;
   position: relative;
   display: flex;
   align-items: center;
+  align-self: stretch;
   gap: 8px;
 }
 
@@ -123,13 +135,14 @@ header {
 .dropdown-list {
   display: none;
   position: absolute;
-  top: calc(100% + 0px);
+  top: 100%;
   left: 0;
   width: 220px;
   background-color: #C1E0FF;
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: 0;
   border-radius: 0;
   box-sizing: border-box;
   z-index: 1001;
@@ -137,6 +150,13 @@ header {
 
 .dropdown-list li {
   margin: 0;
+}
+
+.dropdown-word,
+.arrow{
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
 }
 
 .dropdown-list li a {

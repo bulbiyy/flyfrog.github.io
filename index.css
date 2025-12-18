@@ -108,7 +108,7 @@ button:focus-visible{ outline:none; }
 .leftOverlay{
   position: absolute;
   top: 56px;
-  left: 18px;
+  left: 108px;
   z-index: 30;
 
   pointer-events: none;

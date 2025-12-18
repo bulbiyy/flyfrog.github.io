@@ -36,6 +36,7 @@ button:focus-visible{ outline:none; }
   min-height: 88vh;
 }
 
+.heroStage, .mapLayer { overflow: visible; }
 
 .mapLayer{   
   height: 85vh;         

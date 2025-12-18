@@ -30,31 +30,32 @@ button:focus-visible{ outline:none; }
 
 .heroStage{
   position: relative;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   padding: 24px 18px 0;
-  min-height: 88vh;
 }
 
-.heroStage, .mapLayer { overflow: visible; }
-
-.mapLayer{   
-  height: 85vh;         
-  padding: 0;
+.mapLayer{
+  height: min(78vh, 720px);
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0;
+
   background: transparent;
   border: none;
   box-shadow: none;
-  overflow: visible;  
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: visible;
 }
 
 .mapLayer svg{
-  width: min(900px, 100%);  
-  height: auto;
-  aspect-ratio: 600 / 800;  
+  height: 100%;
+  width: auto;
+  max-width: min(1100px, 100%);
   display: block;
 }
 
@@ -91,7 +92,6 @@ button:focus-visible{ outline:none; }
   filter: drop-shadow(0 10px 14px rgba(12,147,255,.25));
 }
 
-
 .tip{
   position:absolute;
   z-index: 20;
@@ -113,14 +113,15 @@ button:focus-visible{ outline:none; }
 }
 .tip.on{ opacity:1; }
 
-
 .leftOverlay{
   position: absolute;
   top: 56px;
   left: 18px;
   z-index: 30;
+
   pointer-events: none;
   width: min(560px, 90%);
+
   background: transparent;
   display: flex;
   flex-direction: column;
@@ -138,8 +139,8 @@ button:focus-visible{ outline:none; }
 
 .leftOverlay .logo{
   font-family: 'Coiny', cursive;
-  font-size: 90px;      
-  line-height: 1.0;     
+  font-size: 90px;
+  line-height: 1.0;
   color: var(--dark);
 }
 
@@ -148,7 +149,6 @@ button:focus-visible{ outline:none; }
   color: var(--accent);
 }
 
-
 .leftOverlay .btn{
   align-self: flex-start;
   background: var(--dark);
@@ -156,6 +156,7 @@ button:focus-visible{ outline:none; }
   padding: 12px 18px;
   border-radius: 999px;
   cursor: pointer;
+
   pointer-events: auto;
   transition: transform .15s ease, background .15s ease;
 }
@@ -164,7 +165,6 @@ button:focus-visible{ outline:none; }
   transform: translateY(-1px);
   background: var(--accent);
 }
-
 
 .section{
   max-width: 1200px;
@@ -214,6 +214,3 @@ button:focus-visible{ outline:none; }
   color: var(--text);
   line-height: 1.5;
 }
-
-
-

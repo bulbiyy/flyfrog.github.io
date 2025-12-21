@@ -132,12 +132,14 @@ button:focus-visible{ outline:none; }
 .leftOverlay .logo{
   font-family: 'Coiny', cursive;
   font-size: 90px;
-  line-height: 1.0;
+  line-height: 1.5;
   color: var(--dark);
 }
 
 .leftOverlay .tagline{
   font-weight: 600;
+  font-size: 30px;
+  font-family: 'Montserrat';
   color: var(--accent);
 }
 
@@ -146,9 +148,10 @@ button:focus-visible{ outline:none; }
   background: var(--dark);
   color: var(--bg);
   padding: 12px 18px;
-  border-radius: 999px;
+  border-radius: 20px;
   cursor: pointer;
-
+  font-size: 24px;
+  font-family: "Coiny", cursive;
   pointer-events: auto;
   transition: transform .15s ease, background .15s ease;
 }

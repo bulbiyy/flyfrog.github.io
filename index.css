@@ -65,10 +65,12 @@ button:focus-visible{ outline:none; }
 }
 
 .mapLayer svg .blank{
-  fill: var(--bg);
+  fill: #F9FBFF;
+  border: 1px solid rgba(37,39,116,.35);
 }
 
 .mapLayer svg .region{
+  pointer-events: auto;
   fill: rgba(37,39,116,.85);
   cursor: pointer;
 

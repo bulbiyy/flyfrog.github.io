@@ -1,26 +1,33 @@
-const tip = document.querySelector('.tip');
-const map = document.querySelector('.mapLayer svg');
+document.addEventListener("DOMContentLoaded", () => {
+  const map = document.getElementById("map");
+  const mapLayer = document.querySelector(".mapLayer");
+  const tip = document.getElementById("tip");
 
-if (!tip || !map) {
-  console.error("Missing .tip or the SVG inside .mapLayer");
-} else {
-  function moveTip(e, name){
-    tip.textContent = name;
+  if (!map || !mapLayer || !tip) return;
 
-    const layer = map.closest('.mapLayer');
-    const r = layer.getBoundingClientRect();
+  const regions = map.querySelectorAll(".region");
 
-    tip.style.left = (e.clientX - r.left) + 'px';
-    tip.style.top  = (e.clientY - r.top) + 'px';
-    tip.classList.add('on');
-  }
+  regions.forEach(region => {
+    const name = region.dataset.name || "";
 
-  function hideTip(){ tip.classList.remove('on'); }
-
-  map.querySelectorAll('.region').forEach(region => {
-    region.addEventListener('mousemove', (e) => {
-      moveTip(e, region.getAttribute('data-name') || region.getAttribute('title') || 'Area');
+    region.addEventListener("mouseenter", () => {
+      if (name) {
+        tip.textContent = name;
+        tip.classList.add("on");
+      }
     });
-    region.addEventListener('mouseleave', hideTip);
+
+    region.addEventListener("mousemove", (e) => {
+      const rect = mapLayer.getBoundingClientRect();
+
+      // position tooltip RELATIVE to the map container
+      tip.style.left = (e.clientX - rect.left) + "px";
+      tip.style.top  = (e.clientY - rect.top) + "px";
+    });
+
+    region.addEventListener("mouseleave", () => {
+      tip.classList.remove("on");
+    });
   });
-}
+});
+

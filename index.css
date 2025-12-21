@@ -109,9 +109,9 @@ button:focus-visible{ outline:none; }
 
 .leftOverlay{
   position: absolute;
-  top: 26px;
+  top: 6px;
   left: 128px;
-  z-index: 30;
+  z-index: 20;
 
   pointer-events: none;
   width: min(560px, 90%);
@@ -134,7 +134,7 @@ button:focus-visible{ outline:none; }
 .leftOverlay .logo{
   font-family: 'Coiny', cursive;
   font-size: 90px;
-  line-height: 1.5;
+  line-height: 1.05s;
   color: var(--dark);
 }
 
